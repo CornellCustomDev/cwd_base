@@ -663,7 +663,8 @@ template {
   .ck-editor .ck-content .full {
     width: 100%;
     height: auto; }
-  .ck-editor .ck-content .align-left, .ck-editor .ck-content .align-right {
+  .ck-editor .ck-content .align-left, .ck-editor .ck-content .align-right,
+  .ck-editor .ck-content figure .align-left, .ck-editor .ck-content figure .align-right {
     max-width: 100%;
     width: 100%;
     margin: 0 0 1.5em; }
@@ -883,12 +884,12 @@ template {
   .ck-editor .ck-content .panel.dialog-success h1 .fa:before, .ck-editor .ck-content .panel.dialog-success h2 .fa:before, .ck-editor .ck-content .panel.dialog-success h3 .fa:before, .ck-editor .ck-content .panel.dialog-success h4 .fa:before {
     content: '\f058'; }
   @media (min-width: 480px) {
-    .ck-editor .ck-content .align-left {
+    .ck-editor .ck-content .align-left, .ck-editor .ck-content .drupal-media-style-align-left {
       float: left;
       margin: 0.3em 20px 4px 0;
       width: auto;
       max-width: 40%; }
-    .ck-editor .ck-content .align-right {
+    .ck-editor .ck-content .align-right, .ck-editor .ck-content .drupal-media-style-align-right {
       float: right;
       margin: 0.3em 0 4px 20px;
       width: auto;
@@ -986,10 +987,12 @@ template {
   .ck-editor .ck-content .caption > figcaption {
     display: block !important;
     font-size: 13px; }
-  .ck-editor .ck-content div:not(.cke_widget_wrapper):not(.cke_panel_block):not(.panel):not(.ck):not(.ck-fake-selection-container):not(.embedded-content-preview) {
+  .ck-editor .ck-content div:not(.cke_widget_wrapper):not(.cke_panel_block):not(.panel):not(.ck):not(.ck-fake-selection-container):not(.embedded-content-preview):not([data-drupal-media-preview]) {
     border: 1px solid rgba(255, 0, 0, 0.3);
     margin: 0 0 4px;
     padding: 4px; }
+  .ck-editor .ck-content div[data-drupal-media-preview] > div {
+    border: 0 !important; }
   .ck-editor .ck-content .cke_widget_wrapper div {
     border: none;
     padding: 0;

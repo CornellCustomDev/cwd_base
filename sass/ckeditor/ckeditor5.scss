@@ -632,7 +632,8 @@
 		 width: 100%;
 		 height: auto;
 	}
-	.align-left, .align-right {
+	.align-left, .align-right, 
+	figure .align-left, figure .align-right {
 		max-width: 100%;
 		width: 100%;
 		margin: 0 0 1.5em;
@@ -880,13 +881,13 @@
 	// ************************************************************************ //
 	@media (min-width: $screen-xs-min) { // EXTRA SMALL GRID ****************** //
 
-	.align-left {
+	.align-left, .drupal-media-style-align-left {
 		float: left;
 		margin: 0.3em 20px 4px 0;
 		width: auto;
 		max-width: 40%;
 	}
-	.align-right {
+	.align-right, .drupal-media-style-align-right {
 		float: right;
 		margin: 0.3em 0 4px 20px;
 		width: auto;
@@ -1065,10 +1066,13 @@
 
 
 	/* CKEditor Visual Guides */
-	div:not(.cke_widget_wrapper):not(.cke_panel_block):not(.panel):not(.ck):not(.ck-fake-selection-container):not(.embedded-content-preview) {
+	div:not(.cke_widget_wrapper):not(.cke_panel_block):not(.panel):not(.ck):not(.ck-fake-selection-container):not(.embedded-content-preview):not([data-drupal-media-preview]) {
 		border: 1px solid rgba(255,0,0,0.3);
 		margin: 0 0 4px;
 		padding: 4px;
+	}
+	div[data-drupal-media-preview] > div {
+		border: 0 !important;
 	}
 	.cke_widget_wrapper div {
 		border: none;
