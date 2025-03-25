@@ -485,7 +485,7 @@ template {
     margin: 0 0 2em;
     padding: 3px 0 3px 20px;
     border-left: 1px solid #e6e6e6; }
-  .ck-editor .ck-content blockquote.offset {
+  .ck-editor .ck-content blockquote.offset, .ck-editor .ck-content blockquote.impact {
     font-family: Iowan Old Style, Georgia, Athelas, Baskerville, Sitka Display, Constansia, serif;
     font-size: 20px;
     line-height: 1.45;
@@ -496,10 +496,10 @@ template {
     margin: 1.25em 0;
     padding: 15px 30px;
     clear: both; }
-  .ck-editor .ck-content blockquote.offset p {
+  .ck-editor .ck-content blockquote.offset p, .ck-editor .ck-content blockquote.impact p {
     font-size: 20px;
     line-height: 1.45; }
-  .ck-editor .ck-content blockquote footer, .ck-editor .ck-content blockquote.offset footer {
+  .ck-editor .ck-content blockquote footer, .ck-editor .ck-content blockquote.offset footer, .ck-editor .ck-content blockquote.impact footer {
     background: none;
     padding: 0; }
   .ck-editor .ck-content figure {

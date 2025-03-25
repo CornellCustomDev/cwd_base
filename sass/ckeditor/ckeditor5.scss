@@ -392,7 +392,7 @@
 		padding: 3px 0 3px 20px;
 		border-left: 1px solid #e6e6e6;
 	}
-	blockquote.offset {
+	blockquote.offset, blockquote.impact {
 		font-family: $cwd-font-family-serif-alt;
 		font-size: 20px;
 		line-height: 1.45;
@@ -404,11 +404,11 @@
 		padding: 15px 30px;
 		clear: both;
 	}
-	blockquote.offset p {
+	blockquote.offset p, blockquote.impact p {
 		font-size: 20px;
 		line-height: 1.45;
 	}
-	blockquote footer, blockquote.offset footer {
+	blockquote footer, blockquote.offset footer, blockquote.impact footer {
 		background: none;
 		padding: 0;
 	}
