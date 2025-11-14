@@ -1,4 +1,4 @@
-/* CWD Image Slider (ama39, last update: 3/20/24)
+/* CWD Image Slider (ama39, last update: 11/14/25)
    - ...
    - >> TODO: more introduction and documentation will be added here soon (in the meantime, please see the "Scripted Components" documentation for more information) <<
    - preloads images and creates "buffer" layers to allow cover placement and ensure smooth transitions
@@ -65,6 +65,11 @@ function cwd_slider(div,caption,time,speed,auto,random,height,path,bg,heading2,q
 	var photo_credit_mode = false;
 	
 	jQuery(document).ready(function($) {
+		
+		// patch $.isNumeric() for jQuery 4+
+		function isNumeric(value) {
+			return typeof value === 'number' && isFinite(value);
+		}
 		
 		// apply arguments or use defaults
 		var image_div = div || default_div;
@@ -250,7 +255,7 @@ function cwd_slider(div,caption,time,speed,auto,random,height,path,bg,heading2,q
 							$(caption_div).find('.caption-focus').eq(i).focus();
 						}
 					}
-					else if ($.isNumeric(queued_request) == false && i != current_slide) {
+					else if (isNumeric(queued_request) == false && i != current_slide) {
 						queued_request = i;
 					}
 				});
@@ -296,7 +301,7 @@ function cwd_slider(div,caption,time,speed,auto,random,height,path,bg,heading2,q
 					if (!is_transitioning) {
 						changeSlide(target,false);
 					}
-					else if ($.isNumeric(queued_request) == false) {
+					else if (isNumeric(queued_request) == false) {
 						queued_request = target;
 					}
 				}
@@ -370,7 +375,7 @@ function cwd_slider(div,caption,time,speed,auto,random,height,path,bg,heading2,q
 			$('#'+sid+'-slide-buffer'+slide).hide().addClass('incoming-slide').fadeIn(c_speed, function() {
 				$(image_div + ' .current-slide').removeClass('current-slide');
 				$(this).addClass('current-slide').removeClass('incoming-slide');
-				if ($.isNumeric(queued_request) == true) {
+				if (isNumeric(queued_request) == true) {
 					changeSlide(queued_request,false);
 				}
 				if ( heading2_h != '' ) {
